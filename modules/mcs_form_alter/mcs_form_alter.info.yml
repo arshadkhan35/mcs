@@ -1,0 +1,5 @@
+name: MCS Form Alter 
+type: module
+description: It implement alteration of all the form
+core: 8.x
+pacakge: MCS

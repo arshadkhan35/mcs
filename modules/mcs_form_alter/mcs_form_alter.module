@@ -1,0 +1,30 @@
+<?php
+
+function mcs_form_alter_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state,$form_id){
+  //echo 'form_id---';print_r($form_id);
+  if($form_id == "node_submit_resume_form"){
+   unset($form['field_job_id']);
+    //$form['node_submit_resume_form']['field_job_id']['#access'] = FALSE;
+    
+  }
+}
+function mcs_form_alter_entity_presave(Drupal\Core\Entity\EntityInterface $entity){
+  if($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'submit_resume'){
+    $nid = \Drupal::request()->query->get('nid');
+   if (isset($nid) && !empty($nid)){
+    // $entity->get('field_job_id')->get(0)->get('value')->getValue() != 0
+      $entity->field_job_id->value = $nid;
+   }
+  }
+}
+
+function mcs_form_alter_entity_postSave(\Drupal\Core\Entity\EntityStorageInterface $entity){
+  if($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'submit_resume'){
+     $response = new RedirectResponse('jobs');
+      $response->send();
+   
+  }
+}
+//function callback_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+//  $form_state->setRedirect('httphome');
+//}

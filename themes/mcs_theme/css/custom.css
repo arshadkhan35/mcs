@@ -1,0 +1,14 @@
+#edit-field-job-id-wrapper{
+    display: none;
+}
+.region-sidebar-second .sidebar .block {
+    background-color: white;
+    border-color: white;
+}
+.region-sidebar-second  {
+    position: absolute;
+    right: -694px;
+}
+/*.region-content{
+   width: 539px; 
+}*/

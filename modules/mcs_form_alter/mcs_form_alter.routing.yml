@@ -1,0 +1,6 @@
+mcs_form_alter.contact:
+  path: '/contact-submit'
+  defaults:
+    _controller: '\Drupal\mcs_form_alter\Controller\UserContctSubmit::save'
+  requirements:
+    _permission: 'access content'
