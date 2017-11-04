@@ -14,7 +14,7 @@ class UserContctSubmit extends ControllerBase{
 		// Create node object with attached file.
 $node = Node::create([
   'type'        => 'connect',
-  'title'       => \Drupal::request()->request->get('email'),
+  'title'       => \Drupal::request()->request->get('email')	,
   'field_full_name' => \Drupal::request()->request->get('username'),
     'field_company_name' => \Drupal::request()->request->get('company'), 
   'field_email_id' => \Drupal::request()->request->get('email'), 
@@ -22,7 +22,7 @@ $node = Node::create([
  
 ]);
 $node->save();
-  return new \Symfony\Component\HttpFoundation\RedirectResponse(\Drupal::url('<front>'));
+  return new \Symfony\Component\HttpFoundation\RedirectResponse(\Drupal::url('thanku'));
  // don't send the response yourself inside controller and form.
 //return;
   }
