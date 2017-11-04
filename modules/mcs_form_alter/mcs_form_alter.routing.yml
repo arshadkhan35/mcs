@@ -4,3 +4,9 @@ mcs_form_alter.contact:
     _controller: '\Drupal\mcs_form_alter\Controller\UserContctSubmit::save'
   requirements:
     _permission: 'access content'
+mcs_form_alter.thanku:
+  path: '/thanku'
+  defaults:
+    _controller: '\Drupal\mcs_form_alter\Controller\ThankU::rednderThankuPage'
+  requirements:
+    _permission: 'access content'

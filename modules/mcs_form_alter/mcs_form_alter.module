@@ -25,6 +25,11 @@ function mcs_form_alter_entity_postSave(\Drupal\Core\Entity\EntityStorageInterfa
    
   }
 }
-//function callback_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
-//  $form_state->setRedirect('httphome');
-//}
+function mcs_form_alter_theme($variables){
+return [
+'thank_you' => array(
+  'template' => 'thank_you',
+  'variables' => ['name' => NULL],
+),
+];
+}
